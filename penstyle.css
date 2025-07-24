@@ -5,7 +5,7 @@ margin:0;
 
 #con_bi{
 max-width:1920px;
-background: url(gazo/hosi/07-2.webp) center center / cover no-repeat;
+background: url('gazo/hosi/07-2.webp') center center / cover no-repeat;
 background-attachment: fixed;
 }
 
@@ -429,7 +429,7 @@ text-decoration:none;
 margin:0 auto;
 width:250px;
 padding: 80px 30px 30px 30px;
-background: url(gazo/hosi/07-3.webp) center center / cover no-repeat;
+background: url('gazo/hosi/07-3.webp') center center / cover no-repeat;
 }
 
 .form-group{
