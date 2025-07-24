@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charest="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" media="screen and (max-width:450px)" href="sp_penstyle.css">
+<link rel="stylesheet" media="screen and (min-width:451px)" href="penstyle.css"> <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+ <link rel="shortcut icon" href="gazo/favicon.ico">
+ <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+ 
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+
+
+ <title>星とペンギン - メール</title>
+</head>
+<body id="con_bi">
+<header>
+ 
+<div class="hero"> <figure class="ueicon">
+ <img src="gazo/hosimi-color-mini.png">
+</figure> </div>
+ 
+<div id="kotei">
+<nav>
+ <ul id="main">
+ 	<li><a href="index.htm">トップ</a></li>
+ 	<li class="li2"><a href="Illustration.htm">イラスト</a><i class="fas fa-angle-down" ></i>
+ 		<ul id="sub">
+ 			<li><a href="Illustration.htm#jump_hosi">ほしぞら</a></li>
+ 			<li><a href="Illustration.htm#jump_pen">ペンギン</a></li>
+ 			<li><a href="Illustration.htm#jump_nani">なにか</a></li>
+ 		</ul>
+ 	</li>
+ 	<li><a href="fact.htm">工場</a></li>
+ 	<li><a href="contact.htm">メール</a></li>
+ </ul>
+</nav>
+</div>
+
+
+</header>
+<article>
+ 	<div class="slide_up">
+		<h2>おといあわせ</h2>
+ 	</div>
+
+
+    <canvas id="sineCanvas" width="1920" height="1080"></canvas>
+ <div class="fomu">
+
+
+
+
+<form id="contact">
+    <div class="form-group">  
+        <i class="fas fa-user-circle fa-fw mycol"></i>
+        <input id="name" name="yourname" type="text" placeholder="おなまえ" class="form-control"style="border:none">
+    </div>
+    <div class="form-group">  
+      	<i class="fas fa-envelope fa-fw mycol"></i>
+        <input id="email" name="email" type="email" placeholder="メール" class="form-control"style="border:none">
+    </div>
+    <div class="form-group">  
+        <i class="fas fa-comment fa-fw mycol"></i>
+        <textarea id="message" name="message" placeholder="ことづて" class="form-control"style="border:none"></textarea>
+    </div>
+    <div class="send_btn">
+    	<input name="submitted" type="submit" value="そうしん">
+    </div>
+</form>
+
+
+
+
+
+<div class="copy_con">Copylight &copy;SHIORI@desk,allright reserved</div>
+
+ </div>
+
+
+
+<script>
+ 	$(function(){
+ 		// クリックでメニュー開く
+		$(".li2").click(function(){
+			$("#sub").slideToggle()		
+		});
+	});
+</script>
+
+<!--メニューバーのスクロール固定-->
+<script>
+ var _window = $(window),
+    _header = $('#kotei'),
+    heroBottom;
+ 
+_window.on('scroll',function(){     
+    heroBottom = $('.hero').height();
+    if(_window.scrollTop() > heroBottom){
+        _header.addClass('fixed');   
+    }
+    else{
+        _header.removeClass('fixed');   
+    }
+});
+_window.trigger('scroll');
+</script>
+
+ 
+<!--スクロールでスライドイン-->
+<script>
+$(window).on('load scroll', function (){
+
+  var box = $('.slide_up');
+  var animated = 'animated';
+  
+  box.each(function(){
+  
+    var boxOffset = $(this).offset().top;
+    var scrollPos = $(window).scrollTop();
+    var wh = $(window).height();
+
+    //画面内のどの位置で処理を実行するかで「100」の値を変更
+    if(scrollPos > boxOffset - wh + 300 ){
+      $(this).addClass(animated);
+    }
+  });
+
+});
+
+</script>
+
+<script>
+(function () {
+
+var unit = 100,
+    canvas, context, canvas2, context2,
+    height, width, xAxis, yAxis,
+    draw;
+
+/**
+ * Init function.
+ * 
+ * Initialize variables and begin the animation.
+ */
+function init() {
+    
+    canvas = document.getElementById("sineCanvas");
+    
+    canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
+    canvas.height = 120;
+    
+    context = canvas.getContext("2d");
+    
+    height = canvas.height;
+    width = canvas.width;
+    
+    xAxis = Math.floor(height/2);
+    yAxis = 0;
+    
+    draw();
+    //　解像度がウィンドウ拡大すると荒くなるがリログで解消される
+}
+
+/**
+ * Draw animation function.
+ * 
+ * This function draws one frame of the animation, waits 20ms, and then calls
+ * itself again.
+ */
+function draw() {
+    
+    // キャンバスの描画をクリア
+    context.clearRect(0, 0, width, height);
+
+    //波を描画
+    drawWave('#fff', 1, 3, 1);
+    
+    // Update the time and draw again
+    draw.seconds = draw.seconds + .004;
+    draw.t = draw.seconds*Math.PI;
+    setTimeout(draw, 35);
+};
+draw.seconds = 0;
+draw.t = 0;
+
+/**
+* 波を描画
+* drawWave(色, 不透明度, 波の幅のzoom, 波の開始位置の遅れ)
+*/
+function drawWave(color, alpha, zoom, delay) {
+    context.fillStyle = color;
+    context.globalAlpha = alpha;
+
+    context.beginPath(); //パスの開始
+    drawSine(draw.t / 0.5, zoom, delay);
+    context.lineTo(width + 10, height); //パスをCanvasの右下へ
+    context.lineTo(0, height); //パスをCanvasの左下へ
+    context.closePath() //パスを閉じる
+    context.fill(); //塗りつぶす
+}
+
+/**
+ * Function to draw sine
+ * 
+ * The sine curve is drawn in 10px segments starting at the origin. 
+ * drawSine(時間, 波の幅のzoom, 波の開始位置の遅れ)
+ */
+function drawSine(t, zoom, delay) {
+
+    // Set the initial x and y, starting at 0,0 and translating to the origin on
+    // the canvas.
+    var x = t; //時間を横の位置とする
+    var y = Math.sin(x)/zoom;
+    context.moveTo(yAxis, unit*y+xAxis); //スタート位置にパスを置く
+    
+    // Loop to draw segments (横幅の分、波を描画)
+    for (i = yAxis; i <= width + 10; i += 10) {
+        x = t+(-yAxis+i)/unit/zoom;
+        y = Math.sin(x - delay)/3;
+        context.lineTo(i, unit*y+xAxis);
+    }
+}
+
+init();
+    
+})();
+</script>
+
+
+</article>
+<footer>
+
+
+
+</footer>
+</body>
+</html>
