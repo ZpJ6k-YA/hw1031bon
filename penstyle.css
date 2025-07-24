@@ -5,7 +5,7 @@ margin:0;
 
 #con_bi{
 max-width:1920px;
-background: url(gazo/hosi/07-2.png) center center / cover no-repeat;
+background: url(gazo/hosi/07-2.webp) center center / cover no-repeat;
 background-attachment: fixed;
 }
 
@@ -82,7 +82,7 @@ padding: 0px;
 display:none;
 
 }
-/*ƒŠƒXƒg‚Ì•¶š‚Ì’·‚³‚É‚æ‚Á‚Äwidth‚Ì•‚à•Ï‚¦‚È‚­‚Ä‚Í‚¢‚¯‚È‚¢*/
+/*ãƒªã‚¹ãƒˆã®æ–‡å­—ã®é•·ã•ã«ã‚ˆã£ã¦widthã®å¹…ã‚‚å¤‰ãˆãªãã¦ã¯ã„ã‘ãªã„*/
 #sub li{
 list-style:flex;
 width:80px;
@@ -99,7 +99,7 @@ padding:0;
 }
 
 
-/*wight‚Ì•‚Í•Ï‚¦‚é•K—v‚ª–³‚¢*/
+/*wightã®å¹…ã¯å¤‰ãˆã‚‹å¿…è¦ãŒç„¡ã„*/
 nav a:hover{
 width:100%;
 margin:0;
@@ -266,14 +266,14 @@ text-align:center;
 .eee{
 width:150px;
 height:150px;
-/*‰æ‘œ‚ğ•ÏŒ`‚¹‚¸ƒgƒŠƒ~ƒ“ƒO‚·‚é*/
+/*ç”»åƒã‚’å¤‰å½¢ã›ãšãƒˆãƒªãƒŸãƒ³ã‚°ã™ã‚‹*/
 object-fit: cover;
 transition:all 0.7s;
 
 margin-left:auto;
 margin-right:auto;
 
-/*ˆÈ‰º3s‚ªƒ}[ƒN‚ğƒ{ƒbƒNƒX“à‚Éã‰º¶‰E’†‰›‘µ‚¦‚É‚·‚é*/
+/*ä»¥ä¸‹3è¡ŒãŒãƒãƒ¼ã‚¯ã‚’ãƒœãƒƒã‚¯ã‚¹å†…ã«ä¸Šä¸‹å·¦å³ä¸­å¤®æƒãˆã«ã™ã‚‹*/
 display: block;
 justify-content: center;
 align-items: center;
@@ -289,7 +289,7 @@ border-radius: 50%;
 
 @keyframes SlideIn {
   0% {
-    opacity: 0;/*‰Šúó‘Ô‚Å‚Í“§–¾‚É*/
+    opacity: 0;/*åˆæœŸçŠ¶æ…‹ã§ã¯é€æ˜ã«*/
     transform: translateX(64px);
   }
   100% {
@@ -302,7 +302,7 @@ border-radius: 50%;
 .kon{
 width:100px;
 height:100px;
-/*‰æ‘œ‚ğ•ÏŒ`‚¹‚¸ƒgƒŠƒ~ƒ“ƒO‚·‚é*/
+/*ç”»åƒã‚’å¤‰å½¢ã›ãšãƒˆãƒªãƒŸãƒ³ã‚°ã™ã‚‹*/
 object-fit: cover;
 transition:all 0.7s;
 
@@ -312,10 +312,10 @@ border-radius: 50%;
 transform: scale(1.5,1.5);
 }
 
-/*he‚Å‰æ‘œ—Ê‚ª•Ï‚í‚éBƒXƒNƒ[ƒ‹‚Å”wŒi•Ï‰»*/
+/*heã§ç”»åƒé‡ãŒå¤‰ã‚ã‚‹ã€‚ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã§èƒŒæ™¯å¤‰åŒ–*/
 .bg_change1 {
 height: 800px;
-background-image: url('gazo/hosi/03.png');
+background-image: url('gazo/hosi/03.webp');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
@@ -334,7 +334,7 @@ z-index: 2;
 
 .bg_change2 {
 height: 1000px;
-background-image: url('gazo/hosi/03.png');
+background-image: url('gazo/hosi/03.webp');
 background-size: cover;
 background-attachment: fixed;
 background-repeat: no-repeat;
@@ -364,9 +364,9 @@ animation: slideIn 3s  1 forwards;
 
 }
 
-@keyframes fadeIn { /*ã‚Ìbody“à‚ÅŒÄ‚Ño‚µ‚Ä‚¢‚éƒAƒjƒ[ƒVƒ‡ƒ“‚Æ–¼‘O‚ğ‚»‚ë‚¦‚é*/
-    0% {opacity: 0} /* n‚ß */
-    100% {opacity: 1} /* I‚í‚è */
+@keyframes fadeIn { /*ä¸Šã®bodyå†…ã§å‘¼ã³å‡ºã—ã¦ã„ã‚‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã¨åå‰ã‚’ãã‚ãˆã‚‹*/
+    0% {opacity: 0} /* å§‹ã‚ */
+    100% {opacity: 1} /* çµ‚ã‚ã‚Š */
 }
 
 @keyframes slideIn {
@@ -429,7 +429,7 @@ text-decoration:none;
 margin:0 auto;
 width:250px;
 padding: 80px 30px 30px 30px;
-background: url(gazo/hosi/07-3.png) center center / cover no-repeat;
+background: url(gazo/hosi/07-3.webp) center center / cover no-repeat;
 }
 
 .form-group{
